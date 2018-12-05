@@ -138,6 +138,72 @@ class Train:
         imgtk = ImageTk.PhotoImage(image=img)
         self.display.imgtk = imgtk
         self.display.configure(image=imgtk)
+        self.master.after(100, self.show_frame) 
+
+class Recognition:
+    def __init__(self, master):
+        self.master = master
+        self.master.title('Face Recognition')
+        self.master.resizable(False, False)
+
+        # Gets the requested values of the height and widht.
+        windowWidth = 1000
+        windowHeight = 560
+ 
+        # Gets both half the screen width/height and window width/height
+        positionRight = int(self.master.winfo_screenwidth()/2 - windowWidth/2)
+        positionDown = int(self.master.winfo_screenheight()/2 - windowHeight/2)
+ 
+        # Positions the window in the center of the page.
+        self.master.geometry("{}x{}+{}+{}".format(windowWidth, windowHeight, positionRight, positionDown))
+
+        self.master.config(background="#FFFFFF")
+
+        self.title = tk.Label(self.master, justify=tk.CENTER, text="Recognition Your Face", bg="white", font = "Times 30 bold")
+        self.title.pack(fill=tk.X, padx=10, pady=10)
+
+        self.imageFrame = tk.Frame(self.master, width=600, height=500)
+        self.imageFrame.pack(side=tk.LEFT, padx=10, pady=20)
+
+        self.entryFrame = tk.Frame(self.master, bg="white")
+        self.entryFrame.pack(pady=50)
+
+        self.label_title = tk.Label(self.entryFrame, justify=tk.LEFT, text="Your name:", bg="white", font = "Times 15")
+        self.label_title.pack(fill=tk.X, pady=10)
+
+        self.result = tk.Label(self.entryFrame, justify=tk.LEFT, text="...",bg="white", font = "Times 15")
+        self.result.pack(fill=tk.X, pady=10)
+
+        self.back_bt = tk.Button(self.master, text ="Back", height=1, width=10, bg="gray", fg="white", font = "Times 15 bold", command = self.redirect_main)
+        self.back_bt.pack(pady=10)
+
+        self.video_capture = cv2.VideoCapture(0)
+
+        self.display = tk.Label(self.imageFrame)
+        self.display.pack()
+
+        self.faceCascade, self.clf, self.labels = p.recognize_init()
+
+        self.show_frame()
+
+    def redirect_main(self):
+        self.video_capture.release()
+        self.master.destroy()
+        root = tk.Tk() 
+        GUI = Home(root)
+
+    def show_frame(self):
+        _, frame = self.video_capture.read()
+        frame = cv2.flip(frame, 1)
+        image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+        label, _img = p.recognize_face(image, self.faceCascade, self.clf, self.labels)
+
+        self.result['text'] = label
+
+        img = Image.fromarray(_img)
+        imgtk = ImageTk.PhotoImage(image=img)
+        self.display.imgtk = imgtk
+        self.display.configure(image=imgtk)
         self.master.after(100, self.show_frame)
 
 def main():
