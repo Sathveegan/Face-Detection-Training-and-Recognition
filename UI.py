@@ -84,7 +84,7 @@ class Train:
         self.back_bt = tk.Button(self.master, text ="Back", height=1, width=10, bg="gray", fg="white", font = "Times 15 bold", command = self.redirect_main)
         self.back_bt.pack(pady=10)
 
-        self.video_capture = cv2.VideoCapture(0)
+        self.video_capture = cv2.VideoCapture(cv2.CAP_DSHOW)
 
         self.display = tk.Label(self.imageFrame)
         self.display.pack()
@@ -177,7 +177,7 @@ class Recognition:
         self.back_bt = tk.Button(self.master, text ="Back", height=1, width=10, bg="gray", fg="white", font = "Times 15 bold", command = self.redirect_main)
         self.back_bt.pack(pady=10)
 
-        self.video_capture = cv2.VideoCapture(0)
+        self.video_capture = cv2.VideoCapture(cv2.CAP_DSHOW)
 
         self.display = tk.Label(self.imageFrame)
         self.display.pack()
