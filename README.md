@@ -11,11 +11,11 @@ In this application, you are trained the faces using given name and recognise th
 > Python https://www.python.org/downloads/
 
 > Python libraries
-		 - cv2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install opencv-python` 
-		 - numpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install numpy`
-		 - pickle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install pickle5`
-		 - PIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install Pillow`
-		 - tkinter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install python-tk`
+> - cv2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install opencv-python` 
+> - numpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install numpy`
+> - pickle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install pickle5`
+> - PIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install Pillow`
+> - tkinter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install python-tk`
 
 ## Method
 
