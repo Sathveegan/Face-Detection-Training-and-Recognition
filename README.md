@@ -9,6 +9,7 @@ In this application, you are trained the faces using given name and recognise th
 ## Prerequisites
 
 > Python https://www.python.org/downloads/
+
 > Python libraries
 		 - cv2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install opencv-python` 
 		 - numpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install numpy`
@@ -19,7 +20,9 @@ In this application, you are trained the faces using given name and recognise th
 ## Method
 
 > First, clone or download the source code from github
+
 > Then, go to the root directory and type **`python UI.py`**
+
 > After, train and recognise faces :+1:.
 
 ## Screenshots
